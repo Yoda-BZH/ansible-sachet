@@ -1,0 +1,4 @@
+---
+sachet_dependencies:
+  - golang-go
+  - git

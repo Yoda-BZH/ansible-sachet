@@ -1,0 +1,10 @@
+providers:
+  freemobile:
+    username: '{{ freemobile_username }}'
+    password: '{{ freemobile_password }}'
+    url: "https://smsapi.free-mobile.fr/sendmsg"
+
+
+receivers:
+  - name: 'team-sms'
+    provider: 'freemobile'

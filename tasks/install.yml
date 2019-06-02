@@ -1,0 +1,33 @@
+---
+
+- name: create sachet system group
+  group:
+    name: sachet
+    system: true
+    state: present
+
+- name: create sachet system user
+  user:
+    name: sachet
+    system: true
+    shell: "/sbin/nologin"
+    group: sachet
+    createhome: false
+
+- name: Install dependencies
+  package:
+    name: "{{ sachet_dependencies }}"
+    state: present
+
+- name: Get Sachet
+  command: "go get -u {{ sachet_repository }}"
+  environment:
+    GOPATH: "{{ ansible_env.HOME}}/go"
+
+- name: Install Sachet
+  copy:
+    remote_src: yes
+    src: "{{ ansible_env.HOME }}/go/bin/sachet"
+    dest: /usr/local/bin/sachet
+    mode: '0755'
+  notify: restart sachet
