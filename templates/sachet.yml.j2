@@ -1,10 +1,9 @@
+{% if sachet_providers | length %}
 providers:
-  freemobile:
-    username: '{{ freemobile_username }}'
-    password: '{{ freemobile_password }}'
-    url: "https://smsapi.free-mobile.fr/sendmsg"
+  {{ sachet_providers | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
 
-
+{% if sachet_receivers | length %}
 receivers:
-  - name: 'team-sms'
-    provider: 'freemobile'
+  {{ sachet_receivers | to_nice_yaml(indent=2) | indent(2, False) }}
+{% endif %}
