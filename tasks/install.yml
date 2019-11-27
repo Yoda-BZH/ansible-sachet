@@ -45,4 +45,4 @@
   with_items:
     - sachet
   notify:
-    - restart alertmanager
+    - restart sachet
