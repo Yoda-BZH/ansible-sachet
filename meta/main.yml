@@ -1,0 +1,23 @@
+---
+galaxy_info:
+  author: Finwë
+  description: Sachet
+  license: MIT
+  company: none
+  min_ansible_version: 2.5
+  platforms:
+  - name: Ubuntu
+    versions:
+    - bionic
+    - xenial
+  - name: Debian
+    versions:
+    - jessie
+    - stretch
+  - galaxy_tags:
+    - system
+    - monitoring
+    - prometheus
+    - alerting
+
+dependencies: []
