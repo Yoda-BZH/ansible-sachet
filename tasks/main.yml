@@ -1,10 +1,10 @@
 ---
-- include: install.yml
+- include_tasks: install.yml
   become: true
   tags:
     - sachet_install
 
-- include: configure.yml
+- include_tasks: configure.yml
   become: true
   tags:
     - sachet_configure
